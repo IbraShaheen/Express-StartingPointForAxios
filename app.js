@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors")
 
 // Database
 const db = require("./db/models");
@@ -11,6 +12,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
+app.use(cors())
 app.use("/products", productRoutes);
 
 app.use((req, res, next) => {
@@ -34,3 +36,5 @@ const run = async () => {
 };
 
 run();
+
+//test
